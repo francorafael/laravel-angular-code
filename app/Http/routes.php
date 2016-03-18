@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('app');
 });
+
+//ROTA DE TOKEN AUTENTICACAO esta no APP.JS grantPath: 'oauth/token',
+Route::post('oauth/access_token', function() {
+    return \Illuminate\Http\Response::json(Authorizer::issueAcessToken());
+});
